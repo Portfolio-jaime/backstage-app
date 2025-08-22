@@ -10,9 +10,18 @@ RUN apt-get update && apt-get install -y \
     curl \
     openssl \
     python3 \
+    python3-pip \
+    python3-venv \
     nano \
     build-essential \
     && rm -rf /var/lib/apt/lists/*
+
+# Creamos un entorno virtual para Python
+ENV VIRTUAL_ENV=/opt/venv
+RUN python3 -m venv $VIRTUAL_ENV
+ENV PATH="$VIRTUAL_ENV/bin:$PATH"
+
+RUN pip3 install mkdocs-techdocs-core
 
 # Actualizamos npm a la última versión estable (11.x en este momento)
 RUN npm install -g npm@latest
