@@ -14,6 +14,7 @@ RUN apt-get update && apt-get install -y \
     python3-venv \
     nano \
     build-essential \
+    sudo \
     && rm -rf /var/lib/apt/lists/*
 
 # Creamos un entorno virtual para Python
@@ -31,3 +32,4 @@ EXPOSE 3000 443 80 8080 7007
 
 # Dejamos bash como comando por defecto
 CMD [ "bash" ]
+

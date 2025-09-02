@@ -63,3 +63,9 @@ echo "📚 Course Documentation:"
 echo "   • Architecture: http://localhost:3000/docs/default/system/course/"
 echo "   • Troubleshooting: http://localhost:3000/docs/default/system/troubleshooting/"
 echo ""
+
+echo "📦 Instalando dependencias de Backstage y módulo GitHub Scaffolder..."
+cd ../backstage
+yarn install
+yarn --cwd packages/backend add @backstage/plugin-scaffolder-backend-module-github
+echo "✅ Dependencias instaladas."
