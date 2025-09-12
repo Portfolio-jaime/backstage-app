@@ -38,6 +38,8 @@ services:
       - POSTGRES_USER=backstage
       - POSTGRES_PASSWORD=backstage_password
       - POSTGRES_DB=backstage
+      # 👇 Aquí está la clave
+      - NODE_OPTIONS=--no-node-snapshot
     volumes:
       - /Users/jaime.henao/arheanja/Backstage-solutions/backstage-app:/app
       - backstage_data:/app/backstage/data
